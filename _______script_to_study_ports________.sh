@@ -1,0 +1,1 @@
+find . -type f -name "rust*" 2>/dev/null > files;number=`wc -l files | awk '{print $1}'`;for file in $(seq $number);do bhosa=`cat files | sed -n ${file}p`;cat ${bhosa} | grep "^Open " | awk -F ":" '{print $2}'>1.txt;lines=`wc -l 1.txt | awk '{print $1}'`;for line in $(seq $lines);do cat ${bhosa} | grep "^`sed -n ${line}p 1.txt`" | awk '{print $1" "$7" "$8}';done;done | sort -u
